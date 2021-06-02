@@ -1,0 +1,5 @@
+select d.directorname, l.language from film f
+    inner join director d on d.directorid = f.filmdirectorid
+    inner join language l on f.filmlanguageid = l.languageid
+    where l.language not like "English"
+    order by d.directorname asc, l.language asc;

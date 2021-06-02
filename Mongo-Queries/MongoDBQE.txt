@@ -1,0 +1,1 @@
+db.employees.aggregate([{$addFields:{"length":{$strLenCP:"$name"}}}, {"$sort":{"length":-1}},{$limit:1}, {$project:{_id:0, "Letters in Longest Name":"$length"}}])

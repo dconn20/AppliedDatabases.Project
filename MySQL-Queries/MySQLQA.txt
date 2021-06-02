@@ -1,0 +1,7 @@
+select distinct f.filmname, c.countryname from filmcast
+    inner join actor a on castactorid = a.actorid
+    inner join film f on castfilmid = f.filmid
+    inner join country c on f.filmcountryid = countryid
+    inner join director d on f.filmdirectorid = d.directorid
+    where a.actorcountryid = d.directorcountryid
+    and a.actorcountryid != 241;

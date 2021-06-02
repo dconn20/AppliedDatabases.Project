@@ -1,0 +1,1 @@
+db.employees.aggregate([{$sort:{_id:1}}, {$project:{_id:1,"Increase Due":{$switch:{branches:[{case:{$lt:["$pensionLevel",9]},then:"Yes"}],default:"No"}}}}])
